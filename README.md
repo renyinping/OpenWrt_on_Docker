@@ -1,5 +1,5 @@
 # OpenWrt_on_Docker
-在 docker 上运行 OpenWrt
+在 docker 上运行 OpenWrt，参考https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image
 
     # 使用以下命令导入基础镜像
     docker import http://downloads.openwrt.org/attitude_adjustment/12.09/x86/generic/openwrt-x86-generic-rootfs.tar.gz openwrt-x86-generic-rootfs
