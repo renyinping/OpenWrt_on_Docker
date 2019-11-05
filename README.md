@@ -1,6 +1,12 @@
 # OpenWrt_on_Docker
 在 docker 上运行 OpenWrt，参考https://openwrt.org/zh/docs/guide-user/virtualization/docker_openwrt_image
 
+    # ip设置
+    ip link set eth0 promisc on
+    docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet
+    # 部署镜像
+    docker run --restart always -d --network macnet --privileged yinping/openwrt /sbin/init
+
     # 使用以下命令导入基础镜像
     docker import http://downloads.openwrt.org/attitude_adjustment/12.09/x86/generic/openwrt-x86-generic-rootfs.tar.gz openwrt-x86-generic-rootfs
     
